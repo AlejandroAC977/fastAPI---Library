@@ -1,8 +1,10 @@
 from app.schemas.books import BookCreate
+from app.interfaces.book_repository_protocol import BookRepositoryProtocol
 from app.repositories.book_repository import BookRepository
 
+# clase de servicios de book 
 class BookService:
-    def __init__(self, repository: BookRepository):
+    def __init__(self, repository: BookRepositoryProtocol):
         self.repository = repository
 
     def get_books(self, title: str | None = None):
@@ -12,7 +14,7 @@ class BookService:
             return[
                 book for book in books
                 if title.lower() in book["title"].lower()
-            ]
+            ]   
         
         return books
 

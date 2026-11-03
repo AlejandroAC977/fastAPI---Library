@@ -1,0 +1,9 @@
+from typing import Protocol 
+
+class BookRepositoryProtocol(Protocol):
+    def get_all(self):
+        ...
+    def get_by_id(self, book_id: int) -> dict | None:
+        ...
+    def create(self, title: str, author: str) -> dict:
+        ...
