@@ -1,6 +1,5 @@
 from fastapi import APIRouter, HTTPException, Depends
 from app.schemas.books import BookCreate, BookResponse
-from app.repositories.sql_book_repository import SqlBookRepository
 from app.dependencies import get_book_service
 from app.services.BookService import BookService
 
